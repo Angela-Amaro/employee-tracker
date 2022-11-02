@@ -101,8 +101,9 @@ function empView() {
     db.query(roleSql, answer.roleAdd, (err,result) => {
         if (err) throw err;
         roleAdd();
-      console.log "The role has been added!";
+      
   })
+  console.log ("The role has been added!");
  });
 
 function employeeAdd() {
@@ -129,17 +130,34 @@ function employeeAdd() {
     },
 ])
 .then(answer => {
+  //concatinate first name and last name
   const empSql = 'INSERT INTO departments (role_name) VALUES (?);'
   db.query(empSql, answer.empAdd, (err,result) => {
       if (err) throw err;
       roleAdd();
 })
 function updateRole() {
-  const updateSql = 'INSERT INTO departments (role_name) VALUES (?);'
-  db.update(updateSql, answer.empAdd, (err,result) => {
+  const updateSql = 'INSERT INTO roll (role_name) VALUES (?);'
+  db.update(updateSql, , (err,result) => {
       if (err) throw err;
       roleAdd();
+    //   db_con.connect((err) => {
+    //     if (err) {
+    //       console.log("Database Connection Failed !!!", err);
+    //       return;
+    //     }
       
+    //     console.log("We are connected to gfg_db database");
+      
+    //     // Creating Query
+    //     let query = "UPDATE publishers SET salary=0";
+      
+    //     // Executing Query
+    //     db_con.query(query, (err, rows) => {
+    //         if(err) throw err;
+    //         console.log(rows);
+    //     });
+    // });
 inquirer.prompt([
   {
  

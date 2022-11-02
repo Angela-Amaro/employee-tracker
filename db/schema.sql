@@ -5,7 +5,7 @@ USE department_db;
 
 CREATE TABLE department (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  -- why is name not white
+  
   department_name VARCHAR(30) NOT NULL
 );
 
@@ -32,7 +32,6 @@ CREATE TABLE employee (
 
  role_id INT,
  FOREIGN KEY (role_id) REFERENCES roll(id)
-  --make null if no manager
  manager_id INT NULL ,
  FOREIGN KEY (manager_id) REFERENCES employee(id)
 );
